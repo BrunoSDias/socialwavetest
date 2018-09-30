@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Socialwavetest</title>
-    <%= csrf_meta_tags %>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Social Wave</title>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <%= javascript_include_tag "https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js", "https://oss.maxcdn.com/respond/1.4.2/respond.min.js" %>
+  <![endif]-->
 
-  <body>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+      <%= link_to root_path do %>
+        <span class="navbar-brand">SocialWave</span>
+      <% end %>
+    </div>
+    <ul class="nav navbar-nav navbar-right top-nav" style="height: 1px;">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="glyphicon glyphicon-user"></i> <%= cookies[:comprador_login].present? ? JSON.parse(cookies[:comprador_login])["nome"] : "Entrar" %> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <% unless cookies[:comprador_login].present? %>
+                <li>
+                  <%= link_to "Logar", login_index_path, class: "glyphicon glyphicon-off" %>
+                  <%= link_to "Cadastrar", new_comprador_path, class: "glyphicon glyphicon-off" %>
+              <% else %>
+                  <%= link_to "Sair", deslogar_path, class: "glyphicon glyphicon-off" %>
+              <% end %>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% unless cookies[:comprador_login].present? %>
+        <li>
+          <%= link_to "Cadastre-se", new_pedido_path %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+  <div class="container">
     <%= yield %>
-  </body>
+  </div>
+</body>
 </html>

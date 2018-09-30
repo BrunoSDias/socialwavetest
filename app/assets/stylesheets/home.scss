@@ -1,0 +1,50 @@
+.row-margin{
+  margin-top: 20px;
+}
+
+.title {
+    color:#bfbfbf;
+    letter-spacing: 6px;
+}
+
+.ingressos-container{
+  height: 460px;
+  overflow: scroll;
+  background: #fff;
+}
+
+.ingressos-container::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}
+
+.ingresso-box{
+  height: 294px;
+  border-radius: 10px 10px 0px 0px;
+  padding: 15px;
+  -webkit-box-shadow: 7px 9px 20px -2px rgba(0,0,0,0.2);
+  -moz-box-shadow: 7px 9px 20px -2px rgba(0,0,0,0.2);
+  box-shadow: 7px 9px 20px -2px rgba(0,0,0,0.2);
+  overflow: scroll;
+}
+
+.ingresso-box::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}
+
+.img-box{
+  height: 180px;
+}
+
+.image-style{
+  max-width:200px;
+  max-height:175px;
+}
+
+.caption h3{
+  letter-spacing: 2px;
+  color: rgba(0,0,0,0.8);
+}

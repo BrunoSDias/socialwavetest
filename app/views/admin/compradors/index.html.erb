@@ -1,0 +1,33 @@
+<div class="page-header">
+  <%= link_to new_admin_comprador_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    <%= t 'buttons.new' %> Comprador
+  <% end %>
+  <h1>Lista de compradores</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @compradors) do |comprador| %>
+        <td><%= comprador.nome %></td>
+        <td><%= comprador.email %></td>
+        <td><%= comprador.telefone %></td>
+        <td><%= link_to "#{t'buttons.show'}", admin_comprador_path(comprador) %></td>
+        <td><%= link_to "#{t'buttons.edit'}", edit_admin_comprador_path(comprador) %></td>
+        <td><%= link_to "#{t'buttons.destroy'}", admin_comprador_path(comprador), method: :delete, data: { confirm: "#{t'confirm'}" } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

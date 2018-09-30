@@ -12,4 +12,16 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require jquery
+//= require jquery-mask
+//= require bootstrap
+//= require wow
 //= require_tree .
+
+new WOW().init();
+$(document).ready(function(){
+  $('body').scrollspy({
+    target: '.navbar-fixed-top',
+    offset: 51
+  });
+}

@@ -1,0 +1,2 @@
+module Admin::CompradorsHelper
+end

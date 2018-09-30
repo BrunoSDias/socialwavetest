@@ -1,0 +1,51 @@
+.page-header.announce{
+  border-bottom: none;
+  margin-bottom: 0px;
+}
+
+.announce .title{
+  color: #838383;
+}
+
+.announce-box{
+  max-width: 500px;
+  padding-bottom: 0px;
+}
+
+.announce-image{
+  max-width: 500px;
+  max-height: 510px;
+}
+
+.announce-box .img-box{  
+  height: 550px;
+  max-width: 600px;
+  border-radius: 10px 10px 0px 0px;
+  padding: 15px;
+  border: transparent;
+}
+
+.announce-box .caption h3{
+  margin-top: 0;
+}
+
+.announce-box .caption p{
+  margin-bottom: 0;
+}
+
+.ingressos-container{
+  height: 460px;
+  overflow: scroll;
+  background: #fff;
+}
+
+.comprar-box h3{
+  color: #686868;
+}
+
+.btn-comprar{
+  width: 250px;
+  height: 80px;
+  font-size: 3em;
+  padding-bottom: 5px !important;
+}

@@ -10,6 +10,24 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require_boostrap 
  *= require_tree .
  *= require_self
  */
+ nav{
+    padding-right: 10px;
+ }
+
+.navbar.navbar-default{
+  background: transparent;
+}
+
+ .navbar .nav .dropdown a.dropdown-toggle{
+  line-height: 2;
+  color: #9d9d9d;
+}
+
+.navbar.navbar-inverse .nav .dropdown a.dropdown-toggle:hover{
+  color: #fff;
+  background: transparent
+}
