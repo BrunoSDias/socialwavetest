@@ -1,0 +1,7 @@
+<% if flash[:error] %>
+  <div class="alert alert-danger alert-dismissable" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+    <p><%=flash[:error]%></p>
+    </ul>
+  </div>
+<% end %>

@@ -1,0 +1,16 @@
+<% @ingressos.each do |ingresso| %>
+  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 text-center row-margin">
+    <div class="ingresso-box fadeinUp">
+      <div class="img-box">
+        <% imagem =  "festa#{rand(1..14)}"%>
+        <%= link_to new_pedido_path(ingresso: ingresso, imagem: imagem) do %>
+          <%= image_tag imagem, class: 'center-block image-style img-resposive' %>
+        <% end %>
+      </div>
+      <div class="caption">
+          <h3><%= ingresso.nome %></h3>
+          <p> <%= l (ingresso.data), format: :short %></p>
+      </div>
+    </div>
+  </div>
+<% end %>

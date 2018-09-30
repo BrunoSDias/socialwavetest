@@ -1,22 +1,7 @@
-<% if @comprador.new_record? %>
-  <% action_method = "create" %>
-<% else %>
-  <% action_method = "update" %>
-<% end %>
+<%= render 'admin/shared/verify_action', instance: @comprador %>
 
-<%= form_for(@comprador, url: {controller: 'admin/compradors', action: action_method}, html: { class: "form-horizontal", role: "form" }) do |f| %>
-  <% if @comprador.errors.any? %>
-    <div class="alert alert-danger alert-dismissable" role="alert">
-      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
-      <h4><%= pluralize(@comprador.errors.count, "error") %> prohibited this comprador from being saved:</h4>
-
-      <ul>
-      <% @comprador.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for(@comprador, url: {controller: 'admin/compradors', action: @action_method}, html: { class: "form-horizontal", role: "form" }) do |f| %>
+    <%= render 'shared/error', instance: @comprador %>
 
   <div class="form-group">
     <%= f.label :nome, class: "col-sm-2 control-label" %>

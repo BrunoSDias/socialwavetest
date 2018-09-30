@@ -1,17 +1,7 @@
 class PedidosController < SiteController
   before_action :set_pedido, only: [:show, :edit, :update, :destroy]
-  before_action :verify_comprador, only: [:show, :edit, :update, :destroy]
-  # GET /pedidos
-  # GET /pedidos.json
-  def index
-    @pedidos = Pedido.all
-  end
-
-  # GET /pedidos/1
-  # GET /pedidos/1.json
-  def show
-  end
-
+  before_action :verify_comprador, only: [:edit, :update, :destroy]
+ 
   # GET /pedidos/new
   def new
     @pedido = Pedido.new
@@ -34,7 +24,7 @@ class PedidosController < SiteController
 
     respond_to do |format|
       if @pedido.save
-        format.html { redirect_to @pedido, notice: 'Pedido criado com sucesso' }
+        format.html { redirect_to root_path, notice: @pedido.pago ? "Compra realizada com sucesso" : "Solicitação realizada com sucesso" }
         format.json { render :show, status: :created, location: @pedido }
       else
         format.html { render :new }
@@ -48,7 +38,7 @@ class PedidosController < SiteController
   def update
     respond_to do |format|
       if @pedido.update(pedido_params)
-        format.html { redirect_to @pedido, notice: 'Pedido atualizado com sucesso' }
+        format.html { redirect_to comprador_path(@pedido.comprador), notice: 'Pedido atualizado com sucesso' }
         format.json { render :show, status: :ok, location: @pedido }
       else
         format.html { render :edit }

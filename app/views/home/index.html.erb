@@ -1,31 +1,12 @@
 <div class="container">
-  <% if flash[:error] %>
-    <div class="alert alert-danger alert-dismissable" role="alert">
-      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
-      <p><%=flash[:error]%></p>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'shared/notice' %>
+  <%= render 'error' %>
+  
   <div class="row row-margin">
     <h2 class='text-center title'>COMPRE SEU INGRESSO</h2>
   </div>
   <div class="row row-margin well ingressos-container">
-    <% @ingressos.each do |ingresso| %>
-      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 text-center row-margin">
-        <div class="ingresso-box fadeinUp">
-          <div class="img-box">
-            <% imagem =  "festa#{rand(1..14)}"%>
-            <%= link_to new_pedido_path(ingresso: ingresso, imagem: imagem) do %>
-              <%= image_tag imagem, class: 'center-block image-style img-resposive' %>
-            <% end %>
-          </div>
-          <div class="caption">
-              <h3><%= ingresso.nome %></h3>
-              <p> <%= l (ingresso.data), format: :short %></p>
-          </div>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'home/ingressos' %>
   </div>
 
 <div class="featurette" id="about">

@@ -1,11 +1,5 @@
 <%= form_for(@pedido, html: { class: "form-horizontal", role: "form" }) do |f| %>
-  <% if @pedido.errors.any? %>
-      <ul>
-      <% @pedido.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-  <% end %>
+    <%= render 'shared/error', instance: @pedido %>
 
   <div class="announce-box well center-block">
     <div class="img-box">
@@ -25,21 +19,7 @@
       <div class="comprar-box center-block">
         <h3>Preço: <%= number_to_currency(@ingresso.preco) %></h3>
         <br>
-        <% if @pedido.new_record? %>
-          <%= f.submit "Comprar", class: "btn btn-success center-block btn-comprar" %>
-          <small>Taxa de <%= number_to_currency(@ingresso.taxa)%> pelo serviço</small>
-          <br><br>
-          <%= f.submit "Solicitar", class: "btn btn-primary center-block btn-comprar" %>
-        <% else %>
-          <% if @pedido.pago%>
-            <%= link_to "Cancelar", pedido_path, method: :delete, class: 'btn btn-danger center-block btn-comprar', data: { confirm: "#{t'confirm'}" } %>
-          <% else %>
-            <%= f.submit "Comprar", class: "btn btn-success center-block btn-comprar" %>
-            <small>Taxa de <%= number_to_currency(@ingresso.taxa)%> pelo serviço</small>
-            <br><br>
-            <%= link_to "Cancelar", pedido_path, method: :delete, class: 'btn btn-danger center-block btn-comprar', data: { confirm: "#{t'confirm'}" } %>
-          <% end  %>
-        <% end  %>
+        <%= render 'pedidos/submit_form', f: f%>
       </div>
     </div>
   </div>

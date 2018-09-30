@@ -1,15 +1,6 @@
 <div class="comprador center-block">
   <%= form_for(@comprador, html: { class: "form-horizontal", role: "form" }) do |f| %>
-    <% if @comprador.errors.any? %>
-      <div class="alert alert-danger alert-dismissable" role="alert">
-        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
-        <ul>
-        <% @comprador.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <%= render 'shared/error', instance: @comprador %>
 
     <div class="form-group">
       <%= f.label :nome, class: "" %>
