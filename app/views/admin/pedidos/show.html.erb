@@ -1,23 +1,21 @@
 <div class="page-header">
-  <%= link_to pedidos_path, class: 'btn btn-default' do %>
+  <%= render 'shared/notice' %>
+  
+  <%= link_to admin_pedidos_path, class: 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
     Voltar
-  <% end %>
-  <%= link_to edit_pedido_path(@pedido), class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-pencil"></span>
-    Editar
   <% end %>
   <h1>Mostrar Pedido</h1>
 </div>
 
 <dl class="dl-horizontal">
   <dt>Comprador:</dt>
-  <dd><%= @pedido.comprador %></dd>
+  <dd><%= @pedido.comprador.nome %></dd>
 
   <dt>Ingresso:</dt>
-  <dd><%= @pedido.ingresso %></dd>
+  <dd><%= @pedido.ingresso.nome %></dd>
 
   <dt>Pago:</dt>
-  <dd><%= @pedido.pago %></dd>
+  <dd><%= @pedido.pago == true ? "Pago" : "Não Pago" %></dd>
 
 </dl>

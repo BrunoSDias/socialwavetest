@@ -1,21 +1,55 @@
-<div class="row row-margin">  
-  <h2 class='text-center title'>COMPRE SEU INGRESSO</h2>
-</div>
-<div class="row row-margin well ingressos-container">
-  <% @ingressos.each do |ingresso| %>
-    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 text-center row-margin">
-      <div class="ingresso-box fadeinUp">
-        <div class="img-box">
-          <% imagem =  "festa#{rand(1..14)}"%>
-          <%= link_to new_pedido_path(ingresso: ingresso, imagem: imagem) do %>
-            <%= image_tag imagem, class: 'center-block image-style img-resposive' %>
-          <% end %>
-        </div>
-        <div class="caption">
-            <h3><%= ingresso.nome %></h3>
-            <p> <%= l (ingresso.data), format: :short %></p>
-        </div>
-      </div>
+<div class="container">
+  <% if flash[:error] %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+      <p><%=flash[:error]%></p>
+      </ul>
     </div>
   <% end %>
+  <div class="row row-margin">
+    <h2 class='text-center title'>COMPRE SEU INGRESSO</h2>
+  </div>
+  <div class="row row-margin well ingressos-container">
+    <% @ingressos.each do |ingresso| %>
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 text-center row-margin">
+        <div class="ingresso-box fadeinUp">
+          <div class="img-box">
+            <% imagem =  "festa#{rand(1..14)}"%>
+            <%= link_to new_pedido_path(ingresso: ingresso, imagem: imagem) do %>
+              <%= image_tag imagem, class: 'center-block image-style img-resposive' %>
+            <% end %>
+          </div>
+          <div class="caption">
+              <h3><%= ingresso.nome %></h3>
+              <p> <%= l (ingresso.data), format: :short %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+<div class="featurette" id="about">
+    <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/300x300">
+    <h2 class="featurette-heading">This First Heading
+        <span class="text-muted">Will Catch Your Eye</span>
+    </h2>
+    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+</div>
+
+<div class="featurette" id="services">
+    <img class="featurette-image img-circle img-responsive pull-left" src="http://placehold.it/300x300">
+    <h2 class="featurette-heading">The Second Heading
+        <span class="text-muted">Is Pretty Cool Too.</span>
+    </h2>
+    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+</div>
+
+<div class="featurette" id="contact">
+    <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/300x300">
+    <h2 class="featurette-heading">The Third Heading
+        <span class="text-muted">Will Seal the Deal.</span>
+    </h2>
+    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+</div>
+
 </div>

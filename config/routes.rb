@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :pedidos, except: [:index]
+  resources :pedidos
   resources :compradors, except: [:index]
 
 end

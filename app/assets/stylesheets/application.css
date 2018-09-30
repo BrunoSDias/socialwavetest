@@ -22,7 +22,7 @@
   background: transparent;
 }
 
- .navbar .nav .dropdown a.dropdown-toggle{
+.navbar.navbar-inverse .nav .dropdown a.dropdown-toggle{
   line-height: 2;
   color: #9d9d9d;
 }
@@ -30,4 +30,51 @@
 .navbar.navbar-inverse .nav .dropdown a.dropdown-toggle:hover{
   color: #fff;
   background: transparent
+}
+
+.login{
+  max-width: 500px;
+  margin-top: 100px;
+  padding: 20px 50px 20px 50px;
+  -webkit-box-shadow: 7px 9px 20px -2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 7px 9px 20px -2px rgba(0, 0, 0, 0.2);
+    box-shadow: 7px 9px 20px -2px rgba(0, 0, 0, 0.2);
+}
+
+.login h1{
+  letter-spacing: 2px;
+  color: #ff5722;
+}
+
+
+.login .form-group{
+  margin-bottom: 5px;
+}
+
+.login input[type=password], .login input[type=email]{
+  height: 70px;
+  padding: 10px;
+  margin: 0;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.submit-box{
+  padding: 20px;
+  padding-bottom: 0px;
+}
+
+.submit-login{
+  margin-top: 10px;
+  width: 100%;
+  max-width: 500px;  
+  background-color: #ff5722;
+  border-color: #ff5722;
+  height: 50px;
+  color: #fff;
+}
+
+.submit-login:hover {
+  background-color: #ff7347;
+  border-color: #ff7347;
 }

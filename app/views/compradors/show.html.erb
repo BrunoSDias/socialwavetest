@@ -1,13 +1,9 @@
 <div class="page-header">
-  <%= link_to compradors_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-list-alt"></span>
-    <%= t 'buttons.back' %>
-  <% end %>
   <%= link_to edit_comprador_path(@comprador), class: 'btn btn-primary' do %>
     <span class="glyphicon glyphicon-pencil"></span>
     <%= t 'buttons.edit' %>
   <% end %>
-  <h1><%= t 'buttons.show' %> comprador</h1>
+  <h1> Minha Conta</h1>
 </div>
 
 <dl class="dl-horizontal">
@@ -19,5 +15,17 @@
 
   <dt>Telefone:</dt>
   <dd><%= @comprador.telefone %></dd>
+  <br>
 
+  <dt><h3>Pedidos</h3></dt>
+  <% if @comprador.pedidos.count > 0  %>
+    <% @comprador.pedidos.each do |pedido| %>
+    <dd></dd>
+    <br>
+      <dt class="little-margin">Pedido n° <%= pedido.id %></dt>
+        <dd class="little-margin"><%= pedido.pago ? "Pagamento Realizado" : "Pagamento não Realizado" %></dd>
+        <dd><%= link_to "Acessar Pedido", edit_pedido_path(pedido.id, ingresso: pedido.ingresso, imagem: "festa#{rand(1..14)}"), class: 'btn btn-success little-margin' %></dd>
+        <dd><%= link_to "Cancelar Pedido", pedido, method: :delete, class: 'btn btn-danger little-margin', data: { confirm: "#{t'confirm'}" } %></dd>
+    <% end %>
+  <% end %>
 </dl>

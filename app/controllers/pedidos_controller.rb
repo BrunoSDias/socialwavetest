@@ -1,6 +1,6 @@
 class PedidosController < SiteController
   before_action :set_pedido, only: [:show, :edit, :update, :destroy]
-
+  before_action :verify_comprador, only: [:show, :edit, :update, :destroy]
   # GET /pedidos
   # GET /pedidos.json
   def index
@@ -22,6 +22,9 @@ class PedidosController < SiteController
 
   # GET /pedidos/1/edit
   def edit
+    @comprador = Comprador.find(JSON.parse(cookies[:comprador_login])["id"])
+    @ingresso = Ingresso.find(params[:ingresso])
+    @imagem = params[:imagem]
   end
 
   # POST /pedidos
@@ -31,7 +34,7 @@ class PedidosController < SiteController
 
     respond_to do |format|
       if @pedido.save
-        format.html { redirect_to @pedido, notice: 'Pedido was successfully created.' }
+        format.html { redirect_to @pedido, notice: 'Pedido criado com sucesso' }
         format.json { render :show, status: :created, location: @pedido }
       else
         format.html { render :new }
@@ -45,7 +48,7 @@ class PedidosController < SiteController
   def update
     respond_to do |format|
       if @pedido.update(pedido_params)
-        format.html { redirect_to @pedido, notice: 'Pedido was successfully updated.' }
+        format.html { redirect_to @pedido, notice: 'Pedido atualizado com sucesso' }
         format.json { render :show, status: :ok, location: @pedido }
       else
         format.html { render :edit }
@@ -59,7 +62,7 @@ class PedidosController < SiteController
   def destroy
     @pedido.destroy
     respond_to do |format|
-      format.html { redirect_to pedidos_url, notice: 'Pedido was successfully destroyed.' }
+      format.html { redirect_to comprador_path(@pedido.comprador) , notice: 'Pedido Cancelado' }
       format.json { head :no_content }
     end
   end
@@ -72,6 +75,17 @@ class PedidosController < SiteController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pedido_params
+      params[:pedido][:pago] = true if params[:commit] == "Comprar"
       params.require(:pedido).permit(:comprador_id, :ingresso_id, :pago)
+    end
+
+    def verify_comprador
+      if @pedido.comprador.id == JSON.parse(cookies[:comprador_login])["id"]
+        true
+      else
+        false
+        flash[:error] = "Você não tem permissão para acessar esse conteúdo"
+        redirect_to root_path
+      end
     end
 end

@@ -1,4 +1,5 @@
 class Admin::LoginController < ApplicationController
+  layout 'admin'
   def index
 
   end
@@ -13,10 +14,10 @@ class Admin::LoginController < ApplicationController
         email: admin.email
       }
       cookies[:admin_login] = { value: value.to_json, expires: time, httponly: true }
-      # redirect_to admin_index_path
+      redirect_to admin_index_path
     else
       flash[:erro] = "email ou senha inválidos"
-      # redirect_to admin_login_index_path
+      redirect_to admin_login_index_path
     end
   end
 
