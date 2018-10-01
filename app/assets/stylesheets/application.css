@@ -14,13 +14,57 @@
  *= require_tree .
  *= require_self
  */
+
+ html, body{
+  margin: 0;
+  padding: 0;
+ }
+ 
  nav{
     padding-right: 10px;
  }
 
-.navbar.navbar-default{
-  background: transparent;
+nav.navbar{
+    padding-right: 10px;
+    margin-bottom: 20px;
 }
+
+ .navbar-default{
+    background-color: #1a485d;
+    border-color: #1a485d;
+ }
+
+  .navbar-default .navbar-right{
+    margin-right: 0px;
+  }
+
+.navbar-default .navbar-brand{
+  color: #fff;  
+}
+
+.navbar-default .navbar-brand:hover{
+  color: #fff;  
+  background-color: #0072a5;
+}
+
+.navbar-default .navbar-nav > li > a{
+  color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+  color: #fff;
+  background-color: #0072a5;
+}
+
+.navbar-default .navbar-nav > li > a:focus{
+  color: #fff;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
+  color: #fff;
+  background-color: #0072a5;
+}
+
 
 .navbar.navbar-inverse .nav .dropdown a.dropdown-toggle{
   line-height: 2;
@@ -30,6 +74,14 @@
 .navbar.navbar-inverse .nav .dropdown a.dropdown-toggle:hover{
   color: #fff;
   background: transparent
+}
+
+.admin-container{
+  margin-top: 80px;
+}
+
+.site-container{
+  margin-top: 80px;
 }
 
 .login{

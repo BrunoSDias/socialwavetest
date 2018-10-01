@@ -1,17 +1,78 @@
+.header{
+  background-image: url(asset_path("capa2.jpg"));
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 800px;
+  padding-top: 80px;
+}
+
+.tamanhoMinino{
+    min-height: 768px;
+  }
+
+.header h1{
+  font-family:"Cabin", sans-serif;
+  font-weight: bold;
+  font-size: 5em;  
+  text-shadow: #000 1px 1px 1px;
+  font-style: italic; 
+  max-width: 300px;
+  color: #fff;
+}
+
+.header p{
+  font-size: 1.3em;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-shadow: #000 1px 1px 1px;
+  max-width: 300px;
+}
+
+.subtitle{
+  font-size: 1.3em;
+  color: #006597;
+}
+
+.header p.link{
+  font-size: 1.3em;
+}
+
+.header p.link.glyphicon{
+  width: 10px; 
+  transition: 0.3s;
+}
+
+.header p.link:hover{
+  color: #fff;
+}
+
+.header p.link:hover i{
+  transform: translate(4px, 0px);
+  transition: 0.3s;
+}
+
+
+.ingressos{
+}
+
 .row-margin{
   margin-top: 20px;
 }
 
 .title {
-    color:#bfbfbf;
-    letter-spacing: 6px;
+  letter-spacing: 6px;
+  text-shadow: #000 1px 1px 1px;
+  color: #fff;
 }
 
 .ingressos-container{
   height: 460px;
   overflow: scroll;
   background: #fff;
-  margin-bottom: 100px;
+  margin-bottom: 0px;
+  border-radius: 30px;
 }
 
 .ingressos-container::-webkit-scrollbar {
@@ -28,9 +89,21 @@
   -moz-box-shadow: 7px 9px 20px -2px rgba(0,0,0,0.2);
   box-shadow: 7px 9px 20px -2px rgba(0,0,0,0.2);
   overflow: scroll;
+  transition: 0.3s;
+}
+
+.ingresso-box:hover{
+  transform: scale(1.1);
+  transition: 0.3s;
 }
 
 .ingresso-box::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}
+
+.ingresso-box::scrollbar {
   width: 0px;
   height: 0px;
   background: transparent;
@@ -50,141 +123,213 @@
   color: rgba(0,0,0,0.8);
 }
 
+#serviços{
+  background-color: #194263;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  color: #fff;
+}
+
+#serviços .image-area{
+  padding-top: 50px;
+  border-radius: 50%;
+  background-color: #1a76a9;
+  height: 150px;
+  width: 150px;
+  color: #fff;
+  margin-top: 20px;
+  transition: 0.1s;
+}
+
+#serviços .image-area:hover{
+  background-color: #fff;
+  color: #1a76a9;
+  transition: 0.1s;
+}
+
+
+#serviços .text-area{
+  letter-spacing: 2px;
+}
+
+#serviços .serviço-heading{
+  font-size: 2em;
+}
+
+#serviços .glyphicon{
+  font-size: 5em;
+}
+
+.sobre{
+  padding-bottom: 50px;
+}
+
 .featurette {
   overflow: hidden;
-  margin-top: 20px;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 50px;
 }
 
-.featurette-image.pull-left {
-  margin-right: 40px;
+.featurette-image {
+    width: 300px;
+    height: 300px;
+    transition: 0.1s;
 }
 
-.featurette-image.pull-right {
-  margin-left: 40px;
+.featurette-image:hover {
+    transform: scale(0.9);
+    transition: 0.1s;
+}
+
+.featurette-image-left {
+    margin-right: 40px;
+    float: left;
+}
+
+.featurette-image-right {
+    margin-left: 40px;
+    float: right;
 }
 
 .featurette-heading {
-  font-size: 2.5em;
+    font-size: 2.5em;
+}
+
+.featurette-text{
+  max-width: 500px;
 }
 
 .lead{
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
-@media(max-width:1200px) {
-  .headline h1 {
-    font-size: 140px;
-  }
-
-  .headline h2 {
-    font-size: 63px;
-  }
-
-  .featurette-divider {
-    margin: 50px 0;
-  }
-
-  .featurette-image.pull-left {
-    margin-right: 20px;
-  }
-
-  .featurette-image.pull-right {
-    margin-left: 20px;
-  }
-
-  .featurette-heading {
-    font-size: 35px;
-  }
+.contato{
+  box-shadow: inset 0px 1px 0px 1px rgba(33,33,33,0.5);
+  padding: 60px 0 160px 0;
+  background: #212121;
+  color: #fff;
+  letter-spacing: 2px;
 }
 
-@media(max-width:991px) {
-  .headline h1 {
-    font-size: 105px;
-  }
-
-  .headline h2 {
-    font-size: 50px;
-  }
-
-  .featurette-divider {
-    margin: 40px 0;
-  }
-
-  .featurette-image {
-    max-width: 50%;
-  }
-
-  .featurette-image.pull-left {
-    margin-right: 10px;
-  }
-
-  .featurette-image.pull-right {
-    margin-left: 10px;
-  }
-
-  .featurette-heading {
-    font-size: 30px;
-  }
+.network-box{
+  padding-left: 400px;
 }
 
-@media(max-width:768px) {
-  .container {
-    margin: 0 15px;
-  }
+.contact-box{
+  border-left: 1px solid white;
+}
 
-  .featurette-divider {
-    margin: 40px 0;
-  }
+.face{
+  color: #039be5;
+}
 
-  .featurette-heading {
-    font-size: 25px;
+.whats{
+  color: #4CAF50;
+}
+
+.twitter{
+  color: #90ceed;
+}
+
+i.glyphicon-envelope{
+  color: #fff;
+}
+
+.email{
+  color: #fff;
+}
+
+.contact-link:hover{
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.copyright-box{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #424242;
+  color: white;
+}
+
+@media(max-width:1500px) {
+  .network-box{
+    padding-left: 200px;
   }
 }
 
-@media(max-width:668px) {
-  .headline h1 {
-    font-size: 70px;
+@media(max-width:1500px) {
+  .network-box{
+    padding-left: 50px;
+  }
+}
+
+@media(max-width:840px) {
+  .featurette-image{
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media(max-width:767px) {
+  .network-box{
+    padding-bottom: 20px;
   }
 
-  .headline h2 {
-    font-size: 32px;
+  .contato{
+    padding: 60px 0 330px 0;
   }
 
-  .featurette-divider {
-    margin: 30px 0;
+  .contact-box{
+    padding-top: 20px;
+    border-top: 1px solid white;
+    border-left: none;
+    padding-left: 50px;
   }
 }
 
 @media(max-width:640px) {
-  .headline {
-    padding: 75px 0 25px 0;
+  .featurette-image-left {
+    margin-bottom: 10px;
   }
 
-  .headline h1 {
-    font-size: 60px;
+  .featurette-image-right {
+    margin-bottom: 10px;
+  }
+}
+
+@media(max-width:500px) {
+  .featurette-image{
+    display: block;
+    margin: auto;
   }
 
-  .headline h2 {
-    font-size: 30px;
+  .featurette-image-left {
+    float: none;
+  }
+
+  .featurette-image-right {
+    float: none;
   }
 }
 
 @media(max-width:375px) {
-  .featurette-divider {
-    margin: 10px 0;
+  .header h1{
+    font-size: 4em;
+  }
+  
+  .featurette-image{
+    width: 200px;
+    height: 200px;
   }
 
-  .featurette-image {
-    max-width: 100%;
+  .network-box{
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
-  .featurette-image.pull-left {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-
-  .featurette-image.pull-right {
-    margin-bottom: 10px;
-    margin-left: 0;
+  .contact-box{
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }

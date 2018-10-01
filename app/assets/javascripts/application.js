@@ -15,16 +15,9 @@
 //= require jquery
 //= require jquery-mask
 //= require bootstrap
-//= require wow
 //= require_tree .
 
-new WOW().init();
 $(document).ready(function(){
-  $('body').scrollspy({
-    target: '.navbar-fixed-top',
-    offset: 51
-  });
-
 
 var maskBehavior = function (val) {
     return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
@@ -37,4 +30,13 @@ var maskBehavior = function (val) {
   };
 
   $('.cel-mask').mask(maskBehavior, options);
+
+  $(function () {
+    $(".navbar-default").hide();
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 100) {
+        $('.navbar').fadeIn();
+      }
+    });
+  })
 });

@@ -39,7 +39,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-jquery'
   gem 'rails-assets-jquery-mask'
   gem 'rails-assets-boostrap', '3.3.7'
-  gem 'rails-assets-wow'
+  gem 'rails-assets-jquery-mousewheel'
 end
 
 group :development, :test do

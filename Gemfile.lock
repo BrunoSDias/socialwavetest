@@ -114,7 +114,8 @@ GEM
       rails-assets-jquery (>= 1.9.1, < 4)
     rails-assets-jquery (3.3.1)
     rails-assets-jquery-mask (1.14.15)
-    rails-assets-wow (1.1.2)
+    rails-assets-jquery-mousewheel (3.1.13)
+      rails-assets-jquery (>= 1.2.2)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -197,7 +198,7 @@ DEPENDENCIES
   rails-assets-boostrap (= 3.3.7)!
   rails-assets-jquery!
   rails-assets-jquery-mask!
-  rails-assets-wow!
+  rails-assets-jquery-mousewheel!
   record_tag_helper (~> 1.0)
   sass-rails (~> 5.0)
   selenium-webdriver

@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
     layout 'home'
   def index
-    @ingressos = Ingresso.all
+    Time.zone='Brasilia'
+    @ingressos = Ingresso.where(' data >= ?',Time.now )
   end
 end
