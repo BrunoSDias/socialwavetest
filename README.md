@@ -1,28 +1,6 @@
-<<<<<<< HEAD
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Área administrativa se encontra em http://localhost:3000/admin/login/index
 
-Things you may want to cover:
+* Rode rake db:seed para gerar uma instância do Modelo de Admin, para acessar à area Administrativa.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-=======
-# socialwavetest
->>>>>>> 23f24ea5a2656084549e477e9bda36bae0955dda
